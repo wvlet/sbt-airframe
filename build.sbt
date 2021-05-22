@@ -65,7 +65,11 @@ lazy val sbtAirframe =
       ),
       scriptedLaunchOpts := {
         scriptedLaunchOpts.value ++
-          Seq("-Xmx1024M", "-Dplugin.version=" + version.value)
+          Seq(
+            "-Xmx1024M",
+            "-Dplugin.version=" + version.value,
+            "-Dairframe.version=" + AIRFRAME_VERSION
+          )
       },
       scriptedBufferLog := false
     )

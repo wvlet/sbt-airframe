@@ -10,7 +10,7 @@ lazy val spi =
   project
     .in(file("spi"))
     .settings(
-      libraryDependencies += "org.wvlet.airframe" %% "airframe-http" % sys.props("plugin.version")
+      libraryDependencies += "org.wvlet.airframe" %% "airframe-http" % sys.props("airframe.version")
     )
 
 lazy val server =
@@ -24,7 +24,7 @@ lazy val server =
         "myapp.spi:sync"
       ),
       libraryDependencies ++= Seq(
-        "org.wvlet.airframe" %% "airframe-http-finagle" % sys.props("plugin.version")
+        "org.wvlet.airframe" %% "airframe-http-finagle" % sys.props("airframe.version")
       )
     )
     .dependsOn(spi)

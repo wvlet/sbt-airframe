@@ -2,7 +2,7 @@ import wvlet.airframe.sbt.http.AirframeHttpPlugin
 
 val buildSettings: Seq[Def.Setting[_]] = Seq(
   testFrameworks += new TestFramework("wvlet.airspec.Framework"),
-  libraryDependencies += "org.wvlet.airframe" %% "airspec" % "20.7.0" % "test"
+  libraryDependencies += "org.wvlet.airframe" %% "airspec" % sys.props("airframe.version") % "test"
 )
 
 lazy val root =
@@ -15,7 +15,7 @@ lazy val api =
     .in(file("api"))
     .settings(buildSettings)
     .settings(
-      libraryDependencies += "org.wvlet.airframe" %% "airframe-http" % sys.props("plugin.version")
+      libraryDependencies += "org.wvlet.airframe" %% "airframe-http" % sys.props("airframe.version")
     )
 
 lazy val server =
@@ -30,7 +30,7 @@ lazy val server =
         "example.api:grpc"
       ),
       libraryDependencies ++= Seq(
-        "org.wvlet.airframe" %% "airframe-http-grpc" % sys.props("plugin.version")
+        "org.wvlet.airframe" %% "airframe-http-grpc" % sys.props("airframe.version")
       )
     )
     .dependsOn(api)

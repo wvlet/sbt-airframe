@@ -6,7 +6,7 @@ lazy val spi =
     .crossType(CrossType.Pure)
     .in(file("spi"))
     .settings(
-      libraryDependencies += "org.wvlet.airframe" %%% "airframe-http" % sys.props("plugin.version")
+      libraryDependencies += "org.wvlet.airframe" %%% "airframe-http" % sys.props("airframe.version")
     )
 
 lazy val spiJS = spi.js

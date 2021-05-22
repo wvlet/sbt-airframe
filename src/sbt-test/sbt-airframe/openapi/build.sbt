@@ -6,7 +6,7 @@ version := "1.0.0"
 airframeHttpOpenAPIPackages := Seq("example.api")
 airframeHttpOpts := "-l debug"
 libraryDependencies ++= Seq(
-  "org.wvlet.airframe" %% "airframe-http" % sys.props("plugin.version")
+  "org.wvlet.airframe" %% "airframe-http" % sys.props("airframe.version")
 )
 
 TaskKey[Unit]("check") := {
