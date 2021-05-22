@@ -61,7 +61,7 @@ lazy val sbtAirframe =
         "org.wvlet.airframe" %% "airframe-control"      % AIRFRAME_VERSION,
         "org.wvlet.airframe" %% "airframe-codec"        % AIRFRAME_VERSION,
         "org.wvlet.airframe" %% "airframe-log"          % AIRFRAME_VERSION,
-        "org.wvlet.airframe" %% "airframe-http-codegen" % AIRFRAME_VERSION
+        "org.wvlet.airframe" %% "airframe-http-codegen" % AIRFRAME_VERSION % Test
       ),
       scriptedLaunchOpts := {
         scriptedLaunchOpts.value ++
