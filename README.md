@@ -26,6 +26,9 @@ __build.sbt__
 enablePlugins(AirframeHttpPlugin)
 
 airframeHttpClients := Seq("hello.api.v1:sync")
+
+// [optional] Specify airframe-http version to use
+aifframeHttpVersion := (AIRFRAME_VERSION)
 ```
 
 Supported client types are:
