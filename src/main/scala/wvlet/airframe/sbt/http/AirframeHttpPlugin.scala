@@ -93,9 +93,8 @@ object AirframeHttpPlugin extends AutoPlugin with LogSupport {
       airframeHttpClients := Seq.empty,
       airframeHttpClasspass := {
         // Compile all dependent projects
-        val compileResults = (compile in Compile).all(dependentProjects).value
-
-        val baseDir = (ThisBuild / baseDirectory).value
+        val compileResults = (Compile / compile).all(dependentProjects).value
+        val baseDir        = (ThisBuild / baseDirectory).value
         val classpaths =
           ((Compile / dependencyClasspath).value.files :+ (Compile / classDirectory).value)
             .map { p =>
@@ -111,7 +110,7 @@ object AirframeHttpPlugin extends AutoPlugin with LogSupport {
           IO.delete(d)
         }
       },
-      airframeHttpVersion := wvlet.airframe.sbt.BuildInfo.version,
+      airframeHttpVersion := wvlet.airframe.sbt.BuildInfo.airframeVersion,
       airframeHttpBinaryDir := {
         // This task is for downloading airframe-http library to parse Airframe HTTP/RPC interfaces using a forked JVM.
         // Without forking JVM, sbt's class loader cannot load @RPC and @Endpoint annotations.

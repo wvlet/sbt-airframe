@@ -2,7 +2,7 @@
 Global / onChangedBuildSource := ReloadOnSourceChanges
 
 val AIRFRAME_VERSION = "21.5.4"
-val SCALA_2_12          = "2.12.13"
+val SCALA_2_12       = "2.12.13"
 
 ThisBuild / organization := "org.wvlet.airframe"
 
@@ -44,18 +44,24 @@ lazy val sbtAirframe =
     .enablePlugins(SbtPlugin, BuildInfoPlugin)
     .settings(
       buildSettings,
-      buildInfoKeys := Seq[BuildInfoKey](name, version, scalaVersion, sbtVersion),
+      buildInfoKeys ++= Seq[BuildInfoKey](
+        name,
+        version,
+        "airframeVersion" -> AIRFRAME_VERSION,
+        scalaVersion,
+        sbtVersion
+      ),
       buildInfoPackage := "wvlet.airframe.sbt",
       name := "sbt-airframe",
       description := "sbt plugin for helping programming with Airframe",
       scalaVersion := SCALA_2_12,
       libraryDependencies ++= Seq(
-        "io.get-coursier"   %% "coursier"         % "2.0.16",
-        "org.apache.commons" % "commons-compress" % "1.20",
-	"org.wvlet.airframe" %% "airframe-control" % AIRFRAME_VERSION,
-        "org.wvlet.airframe" %%	"airframe-codec" % AIRFRAME_VERSION,
-        "org.wvlet.airframe" %%	"airframe-log" % AIRFRAME_VERSION,
-	"org.wvlet.airframe" %%	"airframe-http-codegen" % AIRFRAME_VERSION
+        "io.get-coursier"    %% "coursier"              % "2.0.16",
+        "org.apache.commons"  % "commons-compress"      % "1.20",
+        "org.wvlet.airframe" %% "airframe-control"      % AIRFRAME_VERSION,
+        "org.wvlet.airframe" %% "airframe-codec"        % AIRFRAME_VERSION,
+        "org.wvlet.airframe" %% "airframe-log"          % AIRFRAME_VERSION,
+        "org.wvlet.airframe" %% "airframe-http-codegen" % AIRFRAME_VERSION
       ),
       scriptedLaunchOpts := {
         scriptedLaunchOpts.value ++
