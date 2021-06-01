@@ -1,3 +1,5 @@
+ThisBuild / resolvers += Resolver.sonatypeRepo("snapshots")
+
 enablePlugins(AirframeHttpPlugin)
 
 name := "Open API Test"
