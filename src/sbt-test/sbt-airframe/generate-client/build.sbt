@@ -3,8 +3,11 @@ import wvlet.airframe.sbt.http.AirframeHttpPlugin
 // Workaround for com.twitter:util-core_2.12:21.4.0 (depends on 1.1.2)
 ThisBuild / libraryDependencySchemes += "org.scala-lang.modules" %% "scala-parser-combinators" % "always"
 
+ThisBuild / resolvers += Resolver.sonatypeRepo("snapshots")
+
 lazy val root =
   project.aggregate(spi, server)
+
 
 lazy val spi =
   project

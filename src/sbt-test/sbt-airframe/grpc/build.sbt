@@ -4,6 +4,7 @@ val buildSettings: Seq[Def.Setting[_]] = Seq(
   testFrameworks += new TestFramework("wvlet.airspec.Framework"),
   libraryDependencies += "org.wvlet.airframe" %% "airspec" % sys.props("airframe.version") % "test"
 )
+ThisBuild / resolvers += Resolver.sonatypeRepo("snapshots")
 
 lazy val root =
   project
