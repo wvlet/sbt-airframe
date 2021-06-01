@@ -1,3 +1,5 @@
+ThisBuild / resolvers += Resolver.sonatypeRepo("snapshots")
+
 lazy val root =
   project.aggregate(spiJS, clientJS)
 

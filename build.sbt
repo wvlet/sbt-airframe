@@ -1,7 +1,8 @@
 // Reload build.sbt on changes
 Global / onChangedBuildSource := ReloadOnSourceChanges
 
-val AIRFRAME_VERSION = "21.5.4"
+val AIRFRAME_VERSION = sys.env.getOrElse("AIRFRAME_VERSION", "21.5.4")
+val AIRSPEC_VERSION  = "21.5.4"
 val SCALA_2_12       = "2.12.14"
 
 ThisBuild / organization := "org.wvlet.airframe"
@@ -10,6 +11,7 @@ ThisBuild / organization := "org.wvlet.airframe"
 ThisBuild / dynverSonatypeSnapshots := true
 // Use coursier friendly version separator
 ThisBuild / dynverSeparator := "-"
+ThisBuild / resolvers += Resolver.sonatypeRepo("snapshots")
 
 val buildSettings = Seq[Setting[_]](
   licenses += ("Apache-2.0", url("https://www.apache.org/licenses/LICENSE-2.0.html")),
@@ -33,7 +35,7 @@ val buildSettings = Seq[Setting[_]](
   ),
   testFrameworks += new TestFramework("wvlet.airspec.Framework"),
   libraryDependencies ++= Seq(
-    "org.wvlet.airframe" %% "airspec" % AIRFRAME_VERSION % Test
+    "org.wvlet.airframe" %% "airspec" % AIRSPEC_VERSION % Test
   )
 )
 
