@@ -56,10 +56,10 @@ release_notes = []
 notes = File.readlines(RELEASE_NOTES_FILE)
 edited_new_release_notes = File.readlines(TMP_RELEASE_NOTES_FILE)
 
-release_notes <<= notes[0..7]
+release_notes <<= notes[0..3]
 release_notes <<= edited_new_release_notes
 release_notes <<= "\n"
-release_notes <<= notes[8..-1]
+release_notes <<= notes[4..-1]
 
 # Update the release note
 File.write(RELEASE_NOTES_FILE, release_notes.join)
