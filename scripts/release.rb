@@ -6,7 +6,7 @@ RELEASE_NOTES_FILE = "release-notes.md"
 MAIN_BRANCH="main"
 
 current_branch = `git rev-parse --abbrev-ref HEAD`.strip
-abort("release.rb must run on master branch. The current branch is #{current_branch}") if current_branch != MAIN_BRANCH
+abort("release.rb must run on main branch. The current branch is #{current_branch}") if current_branch != MAIN_BRANCH
 
 last_tag = `git describe --tags --abbrev=0`.chomp
 last_version = last_tag.sub("v", "")
