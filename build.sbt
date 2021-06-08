@@ -6,7 +6,6 @@ val AIRSPEC_VERSION  = "21.6.0"
 val SCALA_2_12       = "2.12.14"
 
 ThisBuild / organization := "org.wvlet.airframe"
-ThisBuild / sonatypeProfileName := "org.wvlet"
 
 // Use dynamic snapshot version strings for non tagged versions
 ThisBuild / dynverSonatypeSnapshots := true
@@ -26,6 +25,7 @@ val buildSettings = Seq[Setting[_]](
   developers := List(
     Developer(id = "leo", name = "Taro L. Saito", email = "leo@xerial.org", url = url("http://xerial.org/leo"))
   ),
+  sonatypeProfileName := "org.wvlet",
   crossPaths := true,
   publishMavenStyle := true,
   publishTo := sonatypePublishToBundle.value,
