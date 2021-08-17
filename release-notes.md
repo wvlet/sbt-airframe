@@ -2,6 +2,11 @@ Release Notes: sbt-airframe
 =======
 
 ## 21.6.0
+## 21.8.1
+
+- Update sbt-sonatype to 3.9.9 ([#15](https://github.com/wvlet/sbt-airframe/issues/15)) [[578ebf2](https://github.com/wvlet/sbt-airframe/commit/578ebf2)]
+- Update airframe-codec, airframe-control, ... to 21.8.1 ([#16](https://github.com/wvlet/sbt-airframe/issues/16)) [[c737cba](https://github.com/wvlet/sbt-airframe/commit/c737cba)]
+
 ## 21.7.0
 
 - Update airframe-codec, airframe-control, ... to 21.7.0 ([#9](https://github.com/wvlet/sbt-airframe/issues/9)) [[1455273](https://github.com/wvlet/sbt-airframe/commit/1455273)]
