@@ -2,11 +2,11 @@ ThisBuild / resolvers += Resolver.sonatypeRepo("snapshots")
 
 enablePlugins(AirframeHttpPlugin)
 
-name := "Open API Test"
+name    := "Open API Test"
 version := "1.0.0"
 
 airframeHttpOpenAPIPackages := Seq("example.api")
-airframeHttpOpts := "-l debug"
+airframeHttpOpts            := "-l debug"
 libraryDependencies ++= Seq(
   "org.wvlet.airframe" %% "airframe-http" % sys.props("airframe.version")
 )

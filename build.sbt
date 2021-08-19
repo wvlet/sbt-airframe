@@ -26,9 +26,9 @@ val buildSettings = Seq[Setting[_]](
     Developer(id = "leo", name = "Taro L. Saito", email = "leo@xerial.org", url = url("http://xerial.org/leo"))
   ),
   sonatypeProfileName := "org.wvlet",
-  crossPaths := true,
-  publishMavenStyle := true,
-  publishTo := sonatypePublishToBundle.value,
+  crossPaths          := true,
+  publishMavenStyle   := true,
+  publishTo           := sonatypePublishToBundle.value,
   javacOptions ++= Seq("-source", "1.8", "-target", "1.8"),
   scalacOptions ++= Seq(
     "-feature",
@@ -55,9 +55,9 @@ lazy val sbtAirframe =
         sbtVersion
       ),
       buildInfoPackage := "wvlet.airframe.sbt",
-      name := "sbt-airframe",
-      description := "sbt plugin for helping programming with Airframe",
-      scalaVersion := SCALA_2_12,
+      name             := "sbt-airframe",
+      description      := "sbt plugin for helping programming with Airframe",
+      scalaVersion     := SCALA_2_12,
       libraryDependencies ++= Seq(
         "io.get-coursier"    %% "coursier"              % "2.0.16",
         "org.apache.commons"  % "commons-compress"      % "1.21",

@@ -31,12 +31,11 @@ import scala.sys.process._
   * sbt plugin for supporting Airframe HTTP development.
   *
   * This plugin supports:
-  * - Building a Router by scanning interfaces that have methods with @Endpoint annotations in the project
-  * - Generate HTTP client code for Scala and Scala.js.
+  *   - Building a Router by scanning interfaces that have methods with @Endpoint annotations in the project
+  *   - Generate HTTP client code for Scala and Scala.js.
   *
-  * The client code generator is defined in wvlet.airframe.http.codegen package.
-  * This plugin downloads a pre-built archive (airframe-http_(scala version)-(airframe version).tgz) and
-  * invoke HttpClientGenerator.
+  * The client code generator is defined in wvlet.airframe.http.codegen package. This plugin downloads a pre-built
+  * archive (airframe-http_(scala version)-(airframe version).tgz) and invoke HttpClientGenerator.
   */
 object AirframeHttpPlugin extends AutoPlugin with LogSupport {
   wvlet.airframe.log.init
@@ -240,7 +239,7 @@ object AirframeHttpPlugin extends AutoPlugin with LogSupport {
         version = version.value
       ),
       airframeHttpOpenAPITargetDir := target.value,
-      airframeHttpOpenAPIPackages := Seq.empty,
+      airframeHttpOpenAPIPackages  := Seq.empty,
       airframeHttpOpenAPIGenerate := Def
         .task {
           val config             = airframeHttpOpenAPIConfig.value

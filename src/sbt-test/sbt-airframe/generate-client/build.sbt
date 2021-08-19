@@ -8,7 +8,6 @@ ThisBuild / resolvers += Resolver.sonatypeRepo("snapshots")
 lazy val root =
   project.aggregate(spi, server)
 
-
 lazy val spi =
   project
     .in(file("spi"))
