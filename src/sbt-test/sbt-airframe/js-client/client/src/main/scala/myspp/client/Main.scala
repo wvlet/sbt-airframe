@@ -4,7 +4,7 @@ import myapp.spi._
 
 object Main {
 
-  val jsClient = new ServiceJSClient()
+  val jsClient  = new ServiceJSClient()
   val rpcClient = new ServiceJSClientRx()
 
   import MyRPC._
