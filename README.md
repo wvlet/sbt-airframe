@@ -1,3 +1,5 @@
+> :warning: This project has moved to a sub-folder of the Airframe repository: https://github.com/wvlet/airframe/tree/master/sbt-airframe
+
 # sbt-airframe plugin
 
 A sbt plugin for generating [Airframe RPC](https://wvlet.org/airframe/docs/airframe-rpc) clients
